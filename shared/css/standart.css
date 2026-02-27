@@ -16,6 +16,30 @@ body {
   background-attachment: fixed;
   position: relative;
   font-family: "Kantumruy Pro", sans-serif;
+  --sb-track-color: #232E33;
+  --sb-thumb-color: #3fff68;
+  --sb-size: 12px;
+}
+
+*::-webkit-scrollbar {
+  width: var(--sb-size);
+  background: var(--sb-track-color);
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 6px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
 }
 
 input:-webkit-autofill,

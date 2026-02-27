@@ -17,7 +17,7 @@ if (checkboxTerms) {
       errorDiv.textContent = "";
       errorDiv.classList.remove("visible");
     } else {
-      errorDiv.textContent = "Bitte akzeptiere die Privacy Policy.";
+      errorDiv.textContent = "Please accept the Privacy Policy.";
       errorDiv.classList.add("visible");
     }
   });
@@ -179,14 +179,14 @@ function validateFormElements(input) {
   switch (name) {
     case "email":
       if (!emailRegex.test(value)) {
-        showError(input, "Bitte eine gültige Mail-Adresse eingeben.");
+        showError(input, "Please enter a valid email address.");
         return false;
       }
       break;
 
     case "username":
       if (value.length < 3) {
-        showError(input, "Der Name muss mindestens 3 Zeichen haben.");
+        showError(input, "Username must be at least 3 characters.");
         return false;
       }
       break;
@@ -194,7 +194,7 @@ function validateFormElements(input) {
     case "password":
       if (window.location.href.includes("login.html")) {
         if (value.length === 0) {
-          showError(input, "Bitte Passwort eingeben.");
+          showError(input, "Please enter a password.");
           return false;
         }
         break;
@@ -210,7 +210,7 @@ function validateFormElements(input) {
         .querySelector('input[name="password"]')
         .value.trim();
       if (value !== passwordValue) {
-        showError(input, "Die Passwörter stimmen nicht überein.");
+        showError(input, "Passwords do not match.");
         return false;
       }
       break;
@@ -218,7 +218,7 @@ function validateFormElements(input) {
     case "terms":
       const errorDiv = document.getElementById("checkbox-error");
       if (!value) {
-        errorDiv.textContent = "Bitte akzeptiere die Privacy Policy.";
+        errorDiv.textContent = "Please accept the Privacy Policy.";
         errorDiv.classList.add("visible");
         return false;
       } else {

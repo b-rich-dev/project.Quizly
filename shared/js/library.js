@@ -50,7 +50,20 @@ document
   .getElementById("start-quiz")
   .addEventListener("click", async function () {
     let urlInput = document.getElementById("url");
-    let result = await createQuiz(document.getElementById("url").value);
+    let url = urlInput.value.trim();
+    
+    if (!url) {
+      showToastMessage(true, "Please enter a YouTube URL");
+      return;
+    }
+    
+    const youtubeRegex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/|v\/|shorts\/)|youtu\.be\/)[\w-]+/i;
+    if (!youtubeRegex.test(url)) {
+      showToastMessage(true, "Please enter a valid YouTube URL");
+      return;
+    }
+    
+    let result = await createQuiz(url);
     urlInput.value = "";
     if (result && result.id) {
       openQuiz(result.id);

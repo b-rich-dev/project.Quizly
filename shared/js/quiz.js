@@ -256,7 +256,7 @@ async function backToOverview() {
       window.location.href = "/pages/library.html";
     }
   } catch (error) {
-    console.error("Fehler beim Prüfen des Quiz:", error);
+    console.error("Error checking quiz:", error);
     window.location.href = "/pages/library.html";
   }
 }

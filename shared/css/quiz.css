@@ -207,18 +207,7 @@
   display: flex;
 }
 
-#answers-list::-webkit-scrollbar {
-  width: 8px;
-}
 
-#answers-list::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-#answers-list::-webkit-scrollbar-thumb {
-  background-color: var(--bg-color-lightblue);
-  border-radius: 4px;
-}
 
 .answers-overview-list {
   justify-content: start;

@@ -65,8 +65,8 @@ function getToastHTML(msg, error) {
 
   if (msg.length <= 0) {
     msglist = error
-      ? "<li>Es ist ein Fehler aufgetreten</li>"
-      : "<li>Das hat geklappt!</li>";
+      ? "<li>An error occurred</li>"
+      : "<li>Success!</li>";
   }
   for (let i = 0; i < msg.length; i++) {
     msglist += `<li>${msg[i]}</li>`;
